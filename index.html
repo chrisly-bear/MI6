@@ -48,7 +48,7 @@
 
         <div hidden class="alert alert-success" role="alert" id="answerContainer" style="margin-top: 20px;">
             <h4>
-                Richtig Antwort!
+                Richtig!
             </h4>
             <p>
                 Klicken Sie <a href="https://goo.gl/maps/47TYTNDihB7QUhAT7">hier</a>, um zum
@@ -80,6 +80,7 @@
                 console.log('correct answer, unhiding answer container...');
                 var answerContainer = document.getElementById("answerContainer");
                 answerContainer.hidden = false;
+                answerContainer.scrollIntoView(true);
             } else {
                 alert('Falsche Antwort! Versuchen Sie es nochmal.');
             }
