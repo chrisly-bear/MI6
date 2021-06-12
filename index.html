@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MI6 Secret Portal</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container my-3" id="mainContainer" style="max-width: 800px;">
+        <h1>
+            MI6 Secret Portal
+        </h1>
+
+        <p>Ein älterer Herr möchte an diesem Sonntag eine sehr schöne und viel jüngere Frau heiraten. Sein bester Freund
+            rät ihm davon ab. "Du bist doch dreimal so alt wie deine zukünftige Braut" warf er ihm vor. Dieser konterte
+            aber gelassen: "Ja! Aber in 20 Jahren bin ich nur noch doppelt so alt wie sie".
+        </p>
+        <p>
+            In welchem Alter werden die Beiden am Sonntag heiraten?
+        </p>
+
+        <form onsubmit="return checkAnswer()">
+            <div class="form-group">
+                <label for="answerHe">Sein Alter</label>
+                <input type="number" class="form-control" placeholder="Er" id="answerHe" name="answerHe">
+            </div>
+
+            <div class="form-group">
+                <label for="answerShe">Ihr Alter</label>
+                <input type="number" class="form-control" placeholder="Sie" id="answerShe" name="answerShe">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Senden</button>
+        </form>
+
+        <div hidden id="answerContainer" style="margin-top: 20px;">
+            <p>
+                Richtig Antwort! Klicken Sie <a href="https://goo.gl/maps/47TYTNDihB7QUhAT7">hier</a>, um zum
+                Hauptquartier zu gelangen.
+            </br>
+                Alternativ geben Sie diese Koordinaten in Google Maps ein:
+            </p>
+            <p style="font-weight: 500;">
+                46.59258, 7.90756
+            </p>
+        </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function checkAnswer() {
+            var answerHe = document.getElementById("answerHe").value.trim();
+            var answerShe = document.getElementById("answerShe").value.trim();
+            console.log('form submitted. answer: ' + answerHe + ' ' + answerShe);
+            if (answerHe === '60' && answerShe === '20') {
+                console.log('correct answer, unhiding answer container...');
+                var answerContainer = document.getElementById("answerContainer");
+                answerContainer.hidden = false;
+            } else {
+                alert('Falsche Antwort! Versuchen Sie es nochmal.');
+            }
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
